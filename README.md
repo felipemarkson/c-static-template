@@ -1,28 +1,18 @@
-# Static linkC
+# C/C++ Static Template
 
-This project aims to create the tooling necessary to build and linked C and C++ programs and libraries in Linux avoiding license issues with GNU/GCC/GPL.
+This is a template to build static linked C/C++ programs and libraries in Linux.
 
 ## Dependencies
 
-You must have `clang` in your `PATH` env var (installed in your system).
-
-## How to build
-
-Just run `make` in the project root directory. You can also set the enviroment variable `PREFIX` (full path) to change the installation location, by default it is `./staticlinkc`. After that `musl libc` and the tooling should be under the `dist` folder.
-```sh
-PREFIX=/path/to/install/location make
-```
+You must have [Docker engine](https://docs.docker.com/engine/) installed in your computer.
 
 ## How to use
 
-Check one of the examples
-```sh
-<PREFIX>/bin/musl-clang -o dist/examples/helloworld examples/helloworld.c
-<PREFIX>/bin/musl-ldd dist/examples/helloworld
-```
+1. Clone this project
+2. Run `./rundocker.sh` to be moved to a [Alpine Linux](https://alpinelinux.org/) container.
+3. Inside the container, run `make` to build the two sample C and C++ hello-world programs.
+4. Change the licenses, edit the Makefile and the source files as you need.
 
 ## Copyright and License
 
-Static linkC is licensed under MIT License. Check `LICENSE` or `<PREFIX>/LICENSE` for more details.
-
-musl libc has its own license. Check `musl/COPYRIGHT` or `<PREFIX>/musl-LICENSE` for more details.
+C/C++ Static Template is licensed under MIT No Attribution License (MIT-0), a public domain equivalent license. Check [LICENSE](LICENSE) for details.
